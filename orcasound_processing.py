@@ -88,6 +88,6 @@ if __name__ == "__main__":
 
     convert2wav(path.normpath(args.input_dir), "wav")
 
-    for input_wav in sorted(glob.glob("wav/*.wav")):
+    for input_wav in sorted(glob.glob("wav/*.wav"))[-1]:
         output_fname = create_spec_name(input_wav, args.output)
         save_spectrogram(input_wav, output_fname, args.nfft)
