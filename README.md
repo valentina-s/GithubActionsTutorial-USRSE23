@@ -15,3 +15,6 @@ Ocean Observatories Initiative GitHub Actions workflow (located at `.github/work
 Manual workflow runs support setting inputs: node, start time, end time and segment length. Default node is `PC01A`. Segment length can be fractional. To change output directory modify environment variable `OUTPUT_DIR` in the workflow file.
 
 To change processing of the data you will need to modify Python source code (`ooi_processing.py`). Processing loop is in the`save_ooi_spectrograms` function, add your processingsteps after the line `hydrophone_data.wav_write(wav_name)` if you want to work with `.wav` file.
+
+# Spectrogram
+![alt text](https://raw.githubusercontent.com/valentina-s/orca-action-workflow-test/main/bush_point/1618317018/spec.png)
