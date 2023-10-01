@@ -24,8 +24,8 @@ jobs:
 
     - name: Hello world 
       run: |
-        python -c "import scipy as sp; print('Scipy's version'+sp.__version__)"
-        python -c "import matplotlib as mpl; print('Matplotlib's version'+mpl.__version__)"
+        python -c "import scipy as sp; print('Scipy version'+sp.__version__)"
+        python -c "import matplotlib as mpl; print('Matplotlib version'+mpl.__version__)"
         
 
 
