@@ -53,8 +53,15 @@ jobs:
         mkdir -p png/bush_point/${{ env.timestamp }}
         python orcasound_processing.py bush_point/${{ env.timestamp }} -o png/bush_point/${{ env.timestamp }}
 
-    - name: Upload spectrograms
-      uses: actions/upload-artifact@v2
+    - name: Remove files
+      run: |
+        rm -rf bush_point/${{ env.timestamp }}/*.ts
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+          commit_message: Commit to Readme
+
+ 
+    - uses: actions/upload-artifact@v2
       with:
         name: Spectrograms
         path: |
