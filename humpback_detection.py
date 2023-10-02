@@ -8,6 +8,20 @@ import numpy as np
 import subprocess
 
 
+LOCAL_LOADING = False
+
+if LOCAL_LOADING:
+    
+    humpback_path = 'models/humpback_whale_1/'
+    humpback_model = hub.load(humpback_path)
+    
+else:
+    # load models from tensorflow hub
+    vggish_model = hub.load('https://tfhub.dev/google/vggish/1')
+    yamnet_model = hub.load('https://tfhub.dev/google/yamnet/1')
+    humpback_model = hub.load('https://tfhub.dev/google/humpback_whale/1')
+
+
 def score_signal(waveform, model):
     "Assumes the waveform has the correct sample rate"
     waveform = tf.Variable(waveform.reshape([-1, 1]), dtype=tf.float32)
@@ -34,7 +48,7 @@ def get_time_from_filename(filename):
     return f"{filename[11:19]}"
 
 
-def generate_scores(input_dirs, output_dirs, model):
+def generate_scores(input_dirs, output_dirs, humpback_model):
     """
     input_dirs is a list containing the timestamp folder names that you want to sync from S3
     output_dirs is a list containing folder paths to your .wav files that will be generated from .ts files
