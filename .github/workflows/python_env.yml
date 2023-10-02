@@ -2,7 +2,7 @@ name: Python Environment
 
 on:
   # To run manually
-  workflow_dispatch:
+  [workflow_dispatch, push]
 
 jobs:
   setup:
