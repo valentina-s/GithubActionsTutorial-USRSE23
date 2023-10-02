@@ -75,3 +75,44 @@ def make_plot(scores: np.ndarray,
     ax.set_ylabel(ylabel)
     ax.set_xlabel(xlabel)
     plt.show()
+
+
+if __name__ == "__main__":
+    logging.basicConfig(
+        format="%(levelname)s:%(message)s", stream=sys.stdout, level=logging.INFO
+    )
+    parser = argparse.ArgumentParser(
+        description="applies humpback prediction algorithm to wav file"
+    )
+    parser.add_argument(
+        "input_dir",
+        help="Path to wav files.",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        help="Path to output scores. Default is `input_dir`.",
+    )
+
+    args = parser.parse_args()
+
+if __name__ == "__main__":
+    logging.basicConfig(
+        format="%(levelname)s:%(message)s", stream=sys.stdout, level=logging.INFO
+    )
+    parser = argparse.ArgumentParser(
+        description="Creates spectrogram for each .ts file in the input directory."
+    )
+    parser.add_argument(
+        "input_dirs",
+        help="Path to the input directory with `.m3u8` playlist and `.ts` files. Should contain Unix timestamp of the stream start.",
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        help="Path to the output directory for spectrograms. Default is `input_dir`.",
+    )
+    args = parser.parse_args()
+    
+    generate_scores(input_dirs, ['prediciton_plot'])
+    
