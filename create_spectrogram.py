@@ -36,6 +36,19 @@ def plot_psd(data, samplerate, nfft=256, noverlap=128):
     cbar = plt.colorbar()
     cbar.set_label("DB")
 
+def total_psd(data, samplerate, nfft=256, noverlap=128):
+    """Computes total psd.
+
+    Args:
+        `data`: Array or sequence containing the data.
+        `samplerate`: The sampling frequency (samples per time unit).
+        `nfft`: The number of data points used in each block for the FFT. A power 2 is most efficient.
+        `noverlap`: The number of points of overlap between blocks.
+    """
+    spectrum = plt.specgram(data, Fs=samplerate, NFFT=nfft, noverlap=noverlap)
+    print(spectrum.sum().sum())
+    return(spectrum.sum().sum())
+
 
 def save_spectrogram(input_wav, plot_path=None, nfft=256):
     """Saves power spectral density spectrogram to file.
@@ -77,6 +90,11 @@ def save_spectrogram(input_wav, plot_path=None, nfft=256):
     plt.close("all")
     logging.info("Finished " + input_wav)
     return plot_path
+
+
+
+
+
 
 
 if __name__ == "__main__":
