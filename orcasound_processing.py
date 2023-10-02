@@ -81,7 +81,7 @@ if __name__ == "__main__":
         "-n",
         "--nfft",
         type=int,
-        default=512,
+        default=256,
         help="The number of data points used in each block for the FFT. A power 2 is most efficient. Default is %(default)s.",
     )
     args = parser.parse_args()
