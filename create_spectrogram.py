@@ -91,6 +91,29 @@ def save_spectrogram(input_wav, plot_path=None, nfft=256):
     logging.info("Finished " + input_wav)
     return plot_path
 
+def total_spectrum(input_wav, plot_path=None, nfft=256):
+    """Scores power spectral density spectrogram to file.
+
+    Args:
+        `input_wav`: Path to the input .wav file.
+        `plot_path`: Path to the output spectrogram file. Default is `input_wav` with .png extension.
+        `nfft`: The number of data points used in each block for the FFT. A power 2 is most efficient.
+    Returns:
+        Path to the spectrogram.
+    """
+    samplerate, data = wavfile.read(input_wav)
+    noverlap = nfft // 2 if nfft <= 128 else 128
+
+    title = path.splitext(path.basename(input_wav))[0]
+    if len(data.shape) == 1:
+        return(total_psd(data, samplerate, nfft, noverlap))
+    else:
+        # plt.subplot(211)
+        return(total_psd(data[:, 0], samplerate, nfft, noverlap))
+
+
+    
+
 
 
 
