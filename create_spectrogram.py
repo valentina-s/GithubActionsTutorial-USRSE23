@@ -57,11 +57,13 @@ def save_spectrogram(input_wav, plot_path=None, nfft=256):
     else:
         plt.subplot(211)
         plot_psd(data[:, 0], samplerate, nfft, noverlap)
-        title = f"{title}\nChannel 0 above, Channel 1 below"
-        plt.title(title)
 
-        plt.subplot(212)
-        plot_psd(data[:, 1], samplerate, nfft, noverlap)
+
+        # uncomment to show 2 channels 
+        # title = f"{title}\nChannel 0 above, Channel 1 below"
+        # plt.title(title)
+        # plt.subplot(212)
+        # plot_psd(data[:, 1], samplerate, nfft, noverlap)
 
     plt.xlabel("Time [s]")
 
