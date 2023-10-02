@@ -55,7 +55,7 @@ def save_spectrogram(input_wav, plot_path=None, nfft=256):
     if len(data.shape) == 1:
         plot_psd(data, samplerate, nfft, noverlap)
     else:
-        plt.subplot(211)
+        # plt.subplot(211)
         plot_psd(data[:, 0], samplerate, nfft, noverlap)
 
 
