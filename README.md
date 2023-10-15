@@ -20,8 +20,8 @@ In this tutorial we will introduce Github Actions as a tool for lightweight auto
 
 
 # GitHub Actions Introduction
-* [intro slides](https://github.com/valentina-s/GithubActionsTutorial-USRSE23/blob/main/GithubActionsRSETutorial.pdf)
-* [github actions documentation](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)
+* [Intro slides](https://github.com/valentina-s/GithubActionsTutorial-USRSE23/blob/main/GithubActionsRSETutorial.pdf)
+* [Github actions documentation](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)
 
 # Setup 
 * Fork this repo
