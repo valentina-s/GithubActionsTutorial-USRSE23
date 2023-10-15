@@ -47,4 +47,4 @@ Next, we will demonstrate how GitHub Actions can be used to display a spectrogra
   * upload `spec.png` to GitHub 
 
 After the workflow is executed a `spec.png` file is updated in the repo and is visualized below.
-![alt text](https://raw.githubusercontent.com/valentina-s/orca-action-workflow-test/main/bush_point/1618317018/spec.png)
+![alt text](https://raw.githubusercontent.com/valentina-s/orca-action-workflow-test/main/png/spec.png)
