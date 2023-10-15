@@ -1,6 +1,9 @@
 # GitHub Actions for Scientific Data Workflows
-Tutorial presented at [US-RSE'23 Conference](https://us-rse.org/usrse23/). 
+Tutorial presented at [US-RSE'23 Conference](https://us-rse.org/usrse23/).
 
+**Author:** Valentina Staneva, eScience Institute, University of Washington
+
+**Abstract:**
 
 In this tutorial we will introduce Github Actions as a tool for lightweight automation of scientific data workflows. GitHub Actions have become a key tool of the software development lifecycle, however, many scientific programmers who are not involved in software deployment may not be familiar with their functionalities and/or do not know how they can be applied within their data pipeline. Through a sequence of examples, we will demonstrate some of GitHub Actions' applications to automating data processing tasks, such as scheduled deployment of algorithms to streaming data, updating visualizations based on new data, model versioning and performance benchmarking. For the demonstration we will access a public hydrophone stream and compute and visualize statistics of sound patterns. The goal is that participants will leave with their own ideas on how to integrate Github Actions in their own work. 
 
@@ -15,10 +18,10 @@ In this tutorial we will introduce Github Actions as a tool for lightweight auto
 * Learners are capable of triggering GitHub Action Workflows in several different ways and can determine which method could be useful in typical data science applications
 * Learners can export (data) outputs of Github Action Workflows, e.g. tables, plots.
 
-For introduction to GitHub Actions see [here](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions).
 
 # GitHub Actions Introduction
-* [slides]()
+* [intro slides](https://github.com/valentina-s/GithubActionsTutorial-USRSE23/blob/main/GithubActionsRSETutorial.pdf)
+* [github actions documentation](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)
 
 # Setup 
 * Fork this repo
