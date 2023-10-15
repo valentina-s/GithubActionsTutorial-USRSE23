@@ -90,5 +90,5 @@ if __name__ == "__main__":
 
     for input_wav in sorted(glob.glob("wav/*.wav"))[-1:]:
         # output_fname = create_spec_name(input_wav, args.output)
-        output_fname = path.join(args.input_dir, "spec.png")
+        output_fname = path.join(args.output, "spec.png")
         save_spectrogram(input_wav, output_fname, args.nfft)
