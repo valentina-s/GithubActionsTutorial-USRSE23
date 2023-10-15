@@ -2,8 +2,7 @@ name: Orcasound processing
 
 on:
   # To run manually
-  schedule:
-  - cron: '18 18 2 10 *'
+  workflow_dispatch:
 
 jobs:
   process:
@@ -58,8 +57,8 @@ jobs:
 
     - name: Create spectrograms
       run: |
-        mkdir -p png/bush_point/${{ env.timestamp }}
-        python orcasound_processing.py bush_point/${{ env.timestamp }} -o png/bush_point/${{ env.timestamp }}
+        mkdir -p png/
+        python orcasound_processing.py bush_point/${{ env.timestamp }} -o png/
 
     - name: Remove files
       run: |
@@ -67,7 +66,7 @@ jobs:
         rm -rf bush_point/${{ env.timestamp }}/*.wav
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-          commit_message: Commit to Readme
+          commit_message: Commit to Github
           file_pattern: '*.png'
 
  
@@ -75,4 +74,4 @@ jobs:
       with:
         name: Spectrograms
         path: |
-          png/bush_point/${{ env.timestamp }}/*.png
+          png/*.png
